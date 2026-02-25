@@ -23,10 +23,10 @@ const Team = () => {
   ];
 
   return (
-    <section style={{ padding: '80px 10%', background: '#fdfaf7', textAlign: 'center' }}>
-      <div style={{ marginBottom: '50px' }}>
+    <section className="reveal" style={{ padding: 'clamp(56px, 8vw, 80px) clamp(16px, 8vw, 10%)', background: '#fdfaf7', textAlign: 'center' }}>
+      <div className="reveal reveal-delay-1" style={{ marginBottom: '50px' }}>
         <h4 style={{ color: '#603601', letterSpacing: '3px', fontWeight: 'bold', margin: '0' }}>OUR EXPERTS</h4>
-        <h2 style={{ fontSize: '40px', color: '#1a1a1a', marginTop: '10px', fontFamily: "'Playfair Display', serif" }}>Meet Our Passionate Team</h2>
+        <h2 style={{ fontSize: 'clamp(28px, 4.8vw, 40px)', color: '#1a1a1a', marginTop: '10px', fontFamily: "'Playfair Display', serif" }}>Meet Our Passionate Team</h2>
         <div style={{ width: '50px', height: '3px', background: '#603601', margin: '15px auto' }}></div>
       </div>
 
@@ -34,21 +34,21 @@ const Team = () => {
         display: 'flex', 
         flexWrap: 'wrap', 
         justifyContent: 'center', 
-        gap: '40px' 
+        gap: 'clamp(18px, 3vw, 40px)' 
       }}>
         {team.map((member, index) => (
-          <div key={index} style={{ 
-            flex: '1 1 280px', 
-            maxWidth: '300px', 
+          <div key={index} className={`reveal reveal-delay-${(index % 3) + 1}`} style={{ 
+            flex: '1 1 240px', 
+            maxWidth: '320px', 
             textAlign: 'center',
             background: 'white',
-            padding: '30px 20px',
+            padding: 'clamp(18px, 3vw, 30px) clamp(14px, 2.5vw, 20px)',
             borderRadius: '15px',
             boxShadow: '0 10px 25px rgba(0,0,0,0.05)'
           }}>
             <div style={{ 
-              width: '150px', 
-              height: '150px', 
+              width: 'clamp(110px, 20vw, 150px)', 
+              height: 'clamp(110px, 20vw, 150px)', 
               margin: '0 auto 20px', 
               borderRadius: '50%', 
               overflow: 'hidden',

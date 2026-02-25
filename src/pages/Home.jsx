@@ -5,11 +5,11 @@ import Team from '../components/Team';
 
 const Home = () => {
   return (
-    <div>
+    <main className="home-page">
       <Hero />
       <TrendingProducts />
       <Team />
-    </div>
+    </main>
   );
 };
 

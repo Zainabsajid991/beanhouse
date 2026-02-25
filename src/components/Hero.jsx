@@ -5,24 +5,25 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section style={{
-      height: '100vh',
+    <section className="reveal" style={{
+      minHeight: '100vh',
       // Studio quality image: Clean background with floating coffee beans vibe
       background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1600")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       display: 'flex',
-      flexDirection: 'row', // Side by side layout like your example
+      flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
       alignItems: 'center',
+      gap: 'clamp(20px, 4vw, 60px)',
       color: 'white',
-      padding: '0 10%',
-      textAlign: 'left' // Text left side pe rakha hai professional look ke liye
+      padding: 'clamp(56px, 9vw, 110px) clamp(20px, 9vw, 120px)',
+      textAlign: 'left'
     }}>
       
       {/* Left Side: Content */}
-      <div style={{ flex: '1 1 500px', paddingRight: '20px' }}>
+      <div className="reveal reveal-delay-1" style={{ flex: '1 1 340px', maxWidth: '620px' }}>
         <h4 style={{ letterSpacing: '4px', marginBottom: '15px', fontSize: '14px', fontWeight: '600', color: '#bc8f5f' }}>
           PREMIUM BREW EXPERIENCE
         </h4>
@@ -39,7 +40,7 @@ const Hero = () => {
         
         <p style={{ 
           maxWidth: '500px', 
-          fontSize: '20px', 
+          fontSize: 'clamp(16px, 2.4vw, 20px)', 
           marginBottom: '40px', 
           fontWeight: '300', 
           color: '#ddd',
@@ -48,21 +49,25 @@ const Hero = () => {
           Hand-picked beans, roasted to perfection, and served fresh every single day at <strong>Bean House</strong>.
         </p>
 
-        <div style={{ display: 'flex', gap: '20px' }}>
-          <button style={{ 
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <button
+            className="btn-animate"
+            onClick={() => navigate('/menu')}
+            style={{ 
             background: '#bc8f5f', color: 'white', border: 'none', 
-            padding: '18px 45px', cursor: 'pointer', fontWeight: '800', 
-            fontSize: '14px', borderRadius: '4px' 
+            padding: '14px 28px', cursor: 'pointer', fontWeight: '800', 
+            fontSize: '13px', borderRadius: '4px' 
           }}>
             SHOP NOW
           </button>
           
           <button 
+            className="btn-animate"
             onClick={() => navigate('/about')}
             style={{ 
               background: 'transparent', color: 'white', border: '1px solid white', 
-              padding: '18px 45px', cursor: 'pointer', fontWeight: '800', 
-              fontSize: '14px', borderRadius: '4px' 
+              padding: '14px 28px', cursor: 'pointer', fontWeight: '800', 
+              fontSize: '13px', borderRadius: '4px' 
             }}
           >
             OUR STORY
@@ -71,7 +76,7 @@ const Hero = () => {
       </div>
 
       {/* Right Side: Empty space in image handles this naturally */}
-      <div style={{ flex: '1 1 300px' }}></div>
+      <div style={{ flex: '1 1 280px', minHeight: '120px' }}></div>
       
     </section>
   );
